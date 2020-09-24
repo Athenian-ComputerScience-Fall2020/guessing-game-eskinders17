@@ -16,9 +16,7 @@ while x != number:
         print("Your number is too high.") 
         x = int(input("PLease guess again: ")) 
         guesses = guesses + 1
-
-    
-    print("you are out of guesses")    
+   
           
 print()
 print("Congrats, you guessed the number! ")
