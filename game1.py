@@ -1,36 +1,59 @@
 
 
 from random import randint
-guesses = 1
-number = randint(1,10)
-guess_limit = 5
-out_of_guesses = False
+def game():
+    guesses = 1
+    Min = int(input("Enter minimum number"))
+    Max = int(input("Enter maximum number"))
+    number = randint(Min,Max)
+    guess_limit = 5
+    out_of_guesses = False
 
-x = int(input("Guess a number between 1 and 10: "))
+    print("Guess a number between", Min, " and", Max )
+    x = int(input())
 
-while x != number and not(out_of_guesses):
+    while x != number and not(out_of_guesses):
 
-    if guesses < guess_limit:
+        if guesses < guess_limit:
 
-     if x < number:
-        print("Your number is too low.")
-        x = int(input("Please guess again: "))
-        guesses = guesses + 1
-     elif x > number:
-        print("Your number is too high.") 
-        x = int(input("PLease guess again: ")) 
-        guesses = guesses + 1
-    else:
-        out_of_guesses = True  
+         if x < number:
+            print("Your number is too low.")
+            x = int(input("Please guess again: "))
+            guesses = guesses + 1
+        elif x > number:
+            print("Your number is too high.") 
+            x = int(input("PLease guess again: ")) 
+            guesses = guesses + 1
+        else:
+            out_of_guesses = True  
+    return out_of_guesses
+
+out_of_guesses = game()
+  
    
 if out_of_guesses:
     print()
     print("Game over, you are out of guesses")
+    print("Would do you like to play again? ")
+    a = input("Enter 'yes' or 'no' ")
+    if a == 'yes':
+        game()
+    else:
+        print("good bye")
+   
+
+
 else:
- print()
- print("Congrats, you guessed the number! ")
- print("It only took you", guesses, "guesses!")
-# Collaborators: none
+    print()
+    print("Congrats, you guessed the number! ")
+    print("It only took you", guesses, "guesses!")
+    print("Would do you like to play again? ")
+    a = input("Enter 'yes' or 'no' ")
+    if a == 'yes':
+        game()
+    else:
+        print("good bye")
+# Collaborators: 
 
 
 
