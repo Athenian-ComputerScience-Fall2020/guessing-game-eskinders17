@@ -13,46 +13,53 @@ def game():
     x = int(input())
 
     while x != number and not(out_of_guesses):
-
+       # print("while")
         if guesses < guess_limit:
 
-         if x < number:
-            print("Your number is too low.")
-            x = int(input("Please guess again: "))
-            guesses = guesses + 1
-        elif x > number:
-            print("Your number is too high.") 
-            x = int(input("PLease guess again: ")) 
-            guesses = guesses + 1
-        else:
-            out_of_guesses = True  
-    return out_of_guesses
+            if x < number:
+                print("Your number is too low.")
+                x = int(input("Please guess again: "))
+                guesses = guesses + 1 
+            elif x > number:
+                print("Your number is too high.") 
+                x = int(input("PLease guess again: ")) 
+                guesses = guesses + 1
+            else:
+                out_of_guesses = True 
+    if out_of_guesses:
+        print()
+        print("Game over, you are out of guesses")
+    else:
+        print()
+        print("Congrats, you guessed the number! ")
+        print("It only took you", guesses, "guesses!") 
+    #return out_of_guesses,guesses
 
-out_of_guesses = game()
-  
-   
-if out_of_guesses:
-    print()
-    print("Game over, you are out of guesses")
+
+
+game()
+while True:
     print("Would do you like to play again? ")
     a = input("Enter 'yes' or 'no' ")
     if a == 'yes':
         game()
     else:
         print("good bye")
+        break
    
 
 
-else:
-    print()
-    print("Congrats, you guessed the number! ")
-    print("It only took you", guesses, "guesses!")
-    print("Would do you like to play again? ")
-    a = input("Enter 'yes' or 'no' ")
-    if a == 'yes':
-        game()
-    else:
-        print("good bye")
+#else:
+   # print()
+    #print("Congrats, you guessed the number! ")
+    #print("It only took you", guesses, "guesses!")
+#print("Would do you like to play again? ")
+    #a = input("Enter 'yes' or 'no' ")
+    #if a == 'yes':
+        #game()
+    
+    #else:
+        #print("good bye")
 # Collaborators: 
 
 
