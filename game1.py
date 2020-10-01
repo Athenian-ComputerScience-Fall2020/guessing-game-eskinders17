@@ -13,7 +13,7 @@ def game():
     x = int(input())
 
     while x != number and not(out_of_guesses):
-       # print("while")
+      
         if guesses < guess_limit:
 
             if x < number:
@@ -33,7 +33,7 @@ def game():
         print()
         print("Congrats, you guessed the number! ")
         print("It only took you", guesses, "guesses!") 
-    #return out_of_guesses,guesses
+    
 
 
 
@@ -48,19 +48,7 @@ while True:
         break
    
 
-
-#else:
-   # print()
-    #print("Congrats, you guessed the number! ")
-    #print("It only took you", guesses, "guesses!")
-#print("Would do you like to play again? ")
-    #a = input("Enter 'yes' or 'no' ")
-    #if a == 'yes':
-        #game()
-    
-    #else:
-        #print("good bye")
-# Collaborators: 
+ 
 
 
 
