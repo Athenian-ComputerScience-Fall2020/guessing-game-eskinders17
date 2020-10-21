@@ -3,46 +3,46 @@
 
 from random import randint
 def game():
+
+    guesses = 1
     try:
-        guesses = 1
-        Min = int(input("Enter minimum number"))
-        Max = int(input("Enter maximum number"))
+        Min = int(input("Enter minimum number: "))
+        Max = int(input("Enter maximum number: "))
         number = randint(Min,Max)
         guess_limit = 5
         out_of_guesses = False
         print("Guess a number between", Min, " and", Max )
     except:
-        print("Invalid Input")
-           
-    try:
-        x = int(input())
+        print("Invalid Input, Please try again")
+        print()
+        game()
 
-        while x != number and not(out_of_guesses):
+    
+    x = int(input())
+
+    while x != number and not(out_of_guesses):
+    
+        if guesses < guess_limit:
+
+            if x < number:
+                print("Your number is too low.")
+                x = int(input("Please guess again: "))
+                guesses = guesses + 1 
+            elif x > number:
+                print("Your number is too high.") 
+                x = int(input("PLease guess again: ")) 
+                guesses = guesses + 1
+            else:
+                out_of_guesses = True 
+    if out_of_guesses:
+        print("Game over, you are out of guesses")
         
-            if guesses < guess_limit:
+    else:
+        print()
+        print("Congrats, you guessed the number! ")
+        print("It only took you", guesses, "guesses!") 
 
-                if x < number:
-                    print("Your number is too low.")
-                    x = int(input("Please guess again: "))
-                    guesses = guesses + 1 
-                elif x > number:
-                    print("Your number is too high.") 
-                    x = int(input("PLease guess again: ")) 
-                    guesses = guesses + 1
-                else:
-                    out_of_guesses = True 
-        if out_of_guesses:
-            print()
-            print("Game over, you are out of guesses")
-        else:
-            print()
-            print("Congrats, you guessed the number! ")
-            print("It only took you", guesses, "guesses!") 
-    except:
-        print("Invalid Input")
-
-
-
+    
 game()
 while True:
     print("Would do you like to play again? ")
